@@ -1,0 +1,239 @@
+/* ----- Layout.less ----- */
+
+
+html,
+body,
+#app,
+.app-wrap {
+	min-height: 100%;
+	transition: 250ms background-color linear;
+	@media @mq-desktop { height: 100%; overflow: hidden; }
+}
+
+body {
+	font-size: @size-regular;
+	font-family: @font-sans-serif;
+	/* color: @theme-darker;
+	background-color: @theme-light; */
+
+	background-color: @theme-darker;
+	color: @theme-lighter;
+}
+
+/* #r-body,  */
+#cfForm, .fc-view-container {
+	color: @theme-darker;
+}
+
+
+h1, .h1, h2, .h2, h3, .h3 {
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+label {
+	padding-top: 5px;
+}
+
+.required {
+	color: @theme-danger;
+}
+
+.app-wrap {
+	display: flex;
+	flex-flow: column nowrap;
+
+	.navbar,
+	#r-sidebar,
+	#r-body,
+	.footer {
+		flex-shrink: 0;
+	}
+
+	.container-flex {
+		flex-grow: 1;
+		display: flex;
+		flex-flow: row nowrap;
+		@media @mq-mobile { flex-direction: column; }
+	}
+
+	#r-sidebar,
+	#r-body {
+		padding-top: 10px;
+		padding-bottom: 15px;
+	}
+
+	#r-sidebar,
+	#sidebar {
+		.non-button {
+			background-color: transparent;
+			border:none;
+			margin-top: 8px;
+		}
+
+		.pull-right {
+			margin-top: 8px;
+		}
+
+		display: flex;
+		flex-flow: column nowrap;
+	}
+
+	#sidebar,
+	.sidebarMenu,
+	.sidebarMenu ul {
+		flex-grow: 1;
+	}
+}
+
+.body-content {
+	background: url(/images/background-slider-tile.jpg);
+	background-color: @theme-darker;
+	color: @theme-lighter;
+}
+
+.modal-content {
+	background-color: @theme-lighter;
+	color: @theme-darker;
+}
+
+/*
+FlexIt
+------
+Flexible vertical scaling panel utility classes
+
+- flexIt: 				Outer-most container. Will typically only have one of these
+- flexIt-container: 	Any container whose children will flex vertically
+- flexIt-grow: 			Any container who should take up the remaining vertical real estate
+- flexIt-scroll: 		Child container who should scroll their content if it grows too long
+
+Example:
+--------
+<div class="flexIt flexIt-container"> 					<!-- Outermost container -->
+	<div class="flexIt-grow flexIt-container">			<!-- Flexing child, also a container -->
+		<div></div> 									<!-- Non-flexing child -->
+		<div class="flexIt-grow flexIt-scroll"></div> 	<!-- Flexing child, with scrolling overflow -->
+	</div>
+	<div></div>											<!-- Non-flexing child -->
+</div>
+ */
+@media @mq-desktop {
+	.flexIt {
+		height: 100%;
+
+		&-container {
+			display: flex;
+			flex-flow: column nowrap;
+		}
+
+		&-grow { flex: 1; }
+		&-scroll { overflow: auto; }
+
+		&-base5 { flex-basis: 5%; }
+		&-base10 { flex-basis: 10%; }
+		&-base15 { flex-basis: 15%; }
+		&-base20 { flex-basis: 20%; }
+		&-base25 { flex-basis: 25%; }
+		&-base30 { flex-basis: 30%; }
+		&-base35 { flex-basis: 35%; }
+		&-base40 { flex-basis: 40%; }
+		&-base45 { flex-basis: 45%; }
+		&-base50 { flex-basis: 50%; }
+		&-base55 { flex-basis: 55%; }
+		&-base60 { flex-basis: 60%; }
+		&-base65 { flex-basis: 65%; }
+		&-base70 { flex-basis: 70%; }
+		&-base75 { flex-basis: 75%; }
+		&-base80 { flex-basis: 80%; }
+		&-base85 { flex-basis: 85%; }
+		&-base90 { flex-basis: 90%; }
+		&-base95 { flex-basis: 95%; }
+	}
+}
+
+
+.tabs {
+	.commonPanel-outer {
+		margin-top: 0px;
+		border-top-left-radius: 0px;
+		height: ~"calc(100vh - 187px)";
+	}
+}
+
+.bootstrap-select {
+	> .btn {
+		padding: 1px 26px 1px 6px;
+	}
+	ul {
+		/* max-height:340px; */
+	}
+	input {
+		padding: 1px 12px;
+	}
+}
+
+
+
+td {
+	.bootstrap-select {
+		> .btn {
+			margin-top: -5px;
+		}
+	}
+}
+
+.ResultMsg {
+	display: inline-block;
+	border: 1px solid;
+	border-radius: @outer-radius;
+	margin-left: 14px;
+	margin-right: 10px;
+	padding: 7px 10px 7px 10px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+
+.ResultMsg{
+	&-Error {
+		color: @theme-danger;
+		background-color: tint(@theme-danger, 95%);
+	}
+	&-Info {
+		color: @accent;
+		background-color: tint(@accent, 95%);
+	}
+}
+
+.ActionResultMsg {
+	&-info {
+		color: @accent;
+		background-color: tint(@accent, 95%);
+	}
+	&-error {
+		color: @theme-danger;
+		background-color: @theme-lighter;
+	}
+}
+
+/*
+ Patch to eliminate right side of fields being truncated
+ */
+.row {
+    margin-left: -15px;
+    margin-right: -14px;
+}
+
+
+/*
+ * Styling for notifications.
+ */
+ .popover {
+ 	max-width: 25%;
+ 	&-content {
+		th {
+			text-align: right;
+			vertical-align: top;
+			padding-right: 0.5em;
+		}
+	}
+}

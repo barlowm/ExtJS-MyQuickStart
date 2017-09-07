@@ -1,0 +1,26 @@
+/* ----- App.less ----- */
+
+
+@import "base/variables";
+@import "base/layout";
+@import "base/vendor";
+
+
+@import "../theme-classic/app";
+
+/*
+ -- Loading Triton Theme Styles --
+  autoprefixer: off
+@import (less) "../libs/classic/theme-triton/resources/theme-triton-all_1.css";
+@import (less) "../libs/classic/theme-triton/resources/theme-triton-all_2.css";
+*/
+
+
+/* This prevents autoprefixer from working with the Sencha style-sheets */
+/* which autoprefixer reports that they're Gradient has outdated direction syntax. */
+/* autoprefixer: off */
+@import (less) "../libs/classic/theme-classic/resources/theme-classic-all_1.css";
+@import (less) "../libs/classic/theme-classic/resources/theme-classic-all_2.css";
+
+
+
