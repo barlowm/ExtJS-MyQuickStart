@@ -12,7 +12,10 @@ const srcJSLibs =
 
 const srcJSFiles =
 	[
-		"./src/**/*.js"
+		"./src/js/app/model/**/*.js",
+		"./src/js/app/view/**/*.js",
+		"./src/js/app/controller/**/*.js",
+		"./src/js/Application.js",
 	];
 
 const srcImageLibs = [
