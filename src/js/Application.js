@@ -5,7 +5,7 @@
  */
 
 Ext.application({
-	name: 'COMS',
+	name: 'App',
 	controllers: [
 		"Navigation"
 	],
@@ -20,18 +20,16 @@ Ext.application({
 			items: [
 				{
 					region: 'north',
-					html: '<h1 class="x-panel-header">COMS...</h1>Some other information goes here as needed, along with login information',
+					html: '<h1>Application Title...</h1>Some other information goes here as needed, along with login information',
 					border: false,
-					cls: "main-page"
+					cls: "main-page-header"
 				}, {
 					region: 'south',
-					// title: 'South Panel',
-					// collapsible: true,
 					html: 'Copyright information goes here along with sitemap links',
 					split: true,
 					height: 100,
 					border: false,
-					cls: "main-page",
+					cls: "main-page-footer",
 					minHeight: 100
 				},
 				{

@@ -1,4 +1,4 @@
-Ext.define('COMS.controller.Navigation', {
+Ext.define('App.controller.Navigation', {
 	extend: 'Ext.app.Controller',
 	alias : 'widget.Navigation',
 	// Views can be referenced here before they are declared in
